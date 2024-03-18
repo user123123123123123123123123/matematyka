@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #powrot {
+        height: 50px;
+        margin-top: -100px;
+    }
+</style>
+
+<body>
+    <a href="index.html"><button id="powrot">Powrót</button></a>
+    <h1>Zadanie 3</h1>
+    <h2>Dzielenie do 100</h2>
+    <div id="zadanie">
+        <button onclick="losuj()">Losuj</button>
+        <p id="a"></p>
+        <p>/</p>
+        <p id="b"></p>
+        <p>=</p>
+        <input id="d" type="number" class="wpisz"><br>
+        <button onclick="sprawdz()">Sprawdź</button>
+        <p id="e"></p>
+        <script>
+            function losuj() {
+                do {
+                    a = Math.floor(Math.random() * 101);
+                    b = Math.floor(Math.random() * 101);
+                }
+                while (a % b != 0 || b > a || b == 0);
+                {
+                    document.getElementById("a").innerHTML = a;
+                    document.getElementById("b").innerHTML = b;
+                }
+            }
+
+            function sprawdz() {
+                d = document.getElementById("d").value;
+                if (d == a / b && d !== "") {
+                    document.getElementById("e").innerHTML = "Dobrze!";
+                }
+                else if (d !== a / b && d !== "") {
+                    document.getElementById("e").innerHTML = "Źle!";
+                }
+                else {
+                    document.getElementById("e").innerHTML = "Nie wpisałeś wyniku";
+                }
+            }
+        </script>
+</body>
+
+</html>

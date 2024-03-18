@@ -1,0 +1,65 @@
+* {
+    background-color: lightskyblue;
+}
+
+#zadanie {
+    margin-left: 45%;
+    margin-top: 2%;
+    font-size: 25px;
+}
+
+button {
+    height: 100px;
+    width: 20%;
+    background-color: #49aaff;
+    color: aliceblue;
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border: 1px solid #49aaff;
+    text-transform: uppercase;
+    border: ridge thick white;
+    border-radius: 2dvh;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: aliceblue;
+    color: #49aaff;
+    border: 1px solid #49aaff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+#info {
+    margin-top: 20px;
+}
+
+img {
+    height: 100px;
+    width: 180px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.figury {
+    font-size: 20px;
+}
+
+.wpisz {
+    font-size: 18px;
+    width: 150px;
+}

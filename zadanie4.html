@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #kostka1 {
+        margin-top: 10px;
+        float: left;
+        margin-left: -100px;
+        margin-right: 10px;
+    }
+
+    #kostka2 {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    #powrot {
+        height: 50px;
+        margin-top: -100px;
+    }
+</style>
+</style>
+
+<body>
+    <a href="index.html"><button id="powrot">Powrót</button></a>
+    <h1>Zadanie 4</h1>
+    <h2>Oblicz liczbe oczek</h2>
+    <div id="zadanie">
+        <button onclick="losuj()">losuj</button>
+        <br>
+        <div id="kostka1"></div>
+        <div id="kostka2"></div>
+        <p>Podaj sume oczek: </p> <input id="suma" type="number" class="wpisz"><br>
+        <button onclick="sprawdz()">sprawdź</button>
+        <p id="wynik"></p>
+        <script>
+            function losuj() {
+                a = Math.round(Math.random() * 5 + 1);
+                document.getElementById("kostka1").innerHTML = "<img src=kosc_" + a + ".gif>";
+                b = Math.round(Math.random() * 5 + 1);
+                document.getElementById("kostka2").innerHTML = "<img src=kosc_" + b + ".gif>";
+                suma = a + b;
+            }
+            function sprawdz() {
+                c = document.getElementById("suma").value;
+                if (c == suma && c !== "") {
+                    document.getElementById("wynik").innerHTML = "Dobrze!";
+                }
+                else if (c !== suma && c !== "") {
+                    document.getElementById("wynik").innerHTML = "Źle!";
+                }
+                else {
+                    document.getElementById("wynik").innerHTML = "Nie podałeś wyniku";
+                }
+            }
+        </script>
+</body>
+
+</html>

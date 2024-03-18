@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #powrot {
+        height: 50px;
+        margin-top: -100px;
+    }
+</style>
+
+<body>
+    <a href="index.html"><button id="powrot">Powrót</button></a>
+    <h1>Zadanie 1</h1>
+    <h2>Co to za figura?</h2>
+    <div id="zadanie">
+        <button onclick="losuj()">Losuj figure</button>
+        <br>
+        <br>
+        <div id="figura"></div>
+
+        <p>Wybierz nazwę z listy</p>
+        <select name="figury" class="figury">
+            <option id="odpa">kwadrat</option>
+            <option id="odpb">prostokąt</option>
+            <option id="odpc">trójkąt</option>
+            <option id="odpd">koło</option>
+            <option id="odpe">inna figura</option>
+        </select>
+        <br>
+
+        <button onclick="spr()">Sprawdź</button>
+
+        <p id="wynik"></p>
+
+        <script>
+            function losuj() {
+                a = Math.round(Math.random() * 4 + 1);
+                document.getElementById("figura").innerHTML = "<img src=fig_" + a + ".png>";
+                document.getElementById("wynik").innerHTML = " ";
+            }
+            function spr() {
+                var odpa = document.getElementById
+                    ("odpa").selected;
+                var odpb = document.getElementById
+                    ("odpb").selected;
+                var odpc = document.getElementById
+                    ("odpc").selected;
+                var odpd = document.getElementById
+                    ("odpd").selected;
+                var odpe = document.getElementById
+                    ("odpe").selected;
+                console.log(odpa, odpb, odpc, odpd, odpe);
+
+                if (odpa == true && a == 1) {
+                    document.getElementById("wynik").innerHTML = "Dobrze!";
+                }
+                else if (odpb == true && a == 2) {
+                    document.getElementById("wynik").innerHTML = "Dobrze!";
+                }
+                else if (odpc == true && a == 3) {
+                    document.getElementById("wynik").innerHTML = "Dobrze!";
+                }
+                else if (odpd == true && a == 4) {
+                    document.getElementById("wynik").innerHTML = "Dobrze!";
+                }
+                else if (odpe == true && a == 5) {
+                    document.getElementById("wynik").innerHTML = "Dobrze!";
+                }
+                else {
+                    document.getElementById("wynik").innerHTML = "Źle!";
+                }
+            }
+        </script>
+</body>
+
+</html>

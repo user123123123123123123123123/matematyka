@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        img {
+            height: 20px;
+            width: 20px;
+        }
+
+        #wybor {
+            font-size: 40px;
+        }
+
+        #powrot {
+            height: 50px;
+            margin-top: -100px;
+        }
+    </style>
+    <a href="index.html"><button id="powrot">Powrót</button></a>
+    <h1>Zadanie 5</h1>
+    <h2>Wybierz dobry znak</h2>
+    <div id="zadanie">
+        <button onclick="losuj()">Losuj liczby</button>
+        <div id="ile"></div>
+
+        <div id="wybor">
+            <p>Wybierz znak</p>
+            <label><input type="radio" name="pyt1" value="A" id="r"> = </label>
+            <label><input type="radio" name="pyt1" value="B" id="w"> > </label>
+            <label><input type="radio" name="pyt1" value="C" id="m">
+                < </label>
+        </div>
+
+        <button onclick="sprawdz()">Sprawdz</button>
+        <div id="info"></div>
+    </div>
+    <script>
+        function losuj() {
+            var liczba1 = Math.floor(Math.random() * 11);
+            var liczba2 = Math.floor(Math.random() * 11);
+            document.getElementById("ile").innerHTML = liczba1 + " " + "?" + " " + liczba2;
+            a = liczba1;
+            b = liczba2;
+            document.getElementById("info").innerHTML = "";
+        }
+        function sprawdz() {
+            var r = document.getElementById("r").checked;
+            var w = document.getElementById("w").checked;
+            var m = document.getElementById("m").checked;
+            if (r == false && w == false && m == false) {
+                document.getElementById("info").innerHTML = "Nie podałeś znaku";
+            }
+            else if (a == b && r == true) {
+                document.getElementById("info").innerHTML = "Dobrze";
+            }
+            else if (a > b && w == true) {
+                document.getElementById("info").innerHTML = "Dobrze";
+            }
+            else if (a < b && m == true) {
+                document.getElementById("info").innerHTML = "Dobrze";
+            }
+            else {
+                document.getElementById("info").innerHTML = "Źle";
+            }
+        }
+    </script>
+</body>
+
+</html>
